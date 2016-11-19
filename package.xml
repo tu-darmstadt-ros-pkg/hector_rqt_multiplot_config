@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>hector_rqt_multiplot_config</name>
+  <version>0.0.0</version>
+  <description>The hector_rqt_multiplot_config package</description>
+
+  <maintainer email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

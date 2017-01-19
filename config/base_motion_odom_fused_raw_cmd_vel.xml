@@ -26,7 +26,7 @@
                         <curve_0>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>linear/x</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -76,7 +76,7 @@
                         <curve_1>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>twist/twist/linear/x</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -126,7 +126,7 @@
                         <curve_2>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>twist/twist/linear/x</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -201,7 +201,7 @@
                         <curve_0>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>angular/z</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -251,7 +251,7 @@
                         <curve_1>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>twist/twist/angular/z</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -301,7 +301,7 @@
                         <curve_2>
                             <axes>
                                 <x_axis>
-                                    <field></field>
+                                    <field>twist/twist/angular/z</field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>

@@ -72,14 +72,14 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Supply Voltage</title>
+                            <title>Untitled Curve</title>
                         </curve_0>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Voltage</title>
+                    <title>Untitled Plot</title>
                 </column_0>
             </row_0>
         </plots>

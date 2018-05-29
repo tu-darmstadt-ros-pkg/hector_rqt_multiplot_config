@@ -3,7 +3,7 @@
     <table>
         <background_color>#ffffff</background_color>
         <foreground_color>#000000</foreground_color>
-        <link_cursor>false</link_cursor>
+        <link_cursor>true</link_cursor>
         <link_scale>false</link_scale>
         <plots>
             <row_0>
@@ -26,20 +26,7 @@
                         <curve_0>
                             <axes>
                                 <x_axis>
-                                    <field>angular/z</field>
-                                    <field_type>1</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/cmd_vel_raw</topic>
-                                    <type>geometry_msgs/Twist</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>angular/z</field>
+                                    <field>stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -48,8 +35,21 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/cmd_vel_raw</topic>
-                                    <type>geometry_msgs/Twist</type>
+                                    <topic>/diff_drive_controller_state</topic>
+                                    <type>diff_driver_base_controller_msgs/ControllerState</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>left_wheel_velocity</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/diff_drive_controller_state</topic>
+                                    <type>diff_driver_base_controller_msgs/ControllerState</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -72,25 +72,12 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Commanded Yaw Rate</title>
+                            <title>Left Wheel Velocity</title>
                         </curve_0>
                         <curve_1>
                             <axes>
                                 <x_axis>
-                                    <field>twist/twist/angular/z</field>
-                                    <field_type>1</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/odom</topic>
-                                    <type>nav_msgs/Odometry</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>twist/twist/angular/z</field>
+                                    <field>stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -99,8 +86,21 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/odom</topic>
-                                    <type>nav_msgs/Odometry</type>
+                                    <topic>/diff_drive_controller_state</topic>
+                                    <type>diff_driver_base_controller_msgs/ControllerState</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>right_wheel_velocity</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/diff_drive_controller_state</topic>
+                                    <type>diff_driver_base_controller_msgs/ControllerState</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -123,12 +123,12 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Odom Yaw Rate</title>
+                            <title>Right Wheel Velocity</title>
                         </curve_1>
                         <curve_2>
                             <axes>
                                 <x_axis>
-                                    <field>twist/twist/angular/z</field>
+                                    <field></field>
                                     <field_type>1</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -137,11 +137,11 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/odom_raw</topic>
-                                    <type>nav_msgs/Odometry</type>
+                                    <topic>/diff_drive_motion_command</topic>
+                                    <type>diff_driver_base_controller_msgs/DiffDriveCommand</type>
                                 </x_axis>
                                 <y_axis>
-                                    <field>twist/twist/angular/z</field>
+                                    <field>left_motor_cmd</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -150,8 +150,8 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/odom_raw</topic>
-                                    <type>nav_msgs/Odometry</type>
+                                    <topic>/diff_drive_motion_command</topic>
+                                    <type>diff_driver_base_controller_msgs/DiffDriveCommand</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -174,14 +174,65 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Raw Odom Yaw Rate</title>
+                            <title>Left Motor Command</title>
                         </curve_2>
+                        <curve_3>
+                            <axes>
+                                <x_axis>
+                                    <field></field>
+                                    <field_type>1</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/diff_drive_motion_command</topic>
+                                    <type>diff_driver_base_controller_msgs/DiffDriveCommand</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>right_motor_cmd</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/diff_drive_motion_command</topic>
+                                    <type>diff_driver_base_controller_msgs/DiffDriveCommand</type>
+                                </y_axis>
+                            </axes>
+                            <color>
+                                <custom_color>#000000</custom_color>
+                                <type>0</type>
+                            </color>
+                            <data>
+                                <circular_buffer_capacity>1000</circular_buffer_capacity>
+                                <time_frame_length>10</time_frame_length>
+                                <type>0</type>
+                            </data>
+                            <style>
+                                <lines_interpolate>false</lines_interpolate>
+                                <pen_style>1</pen_style>
+                                <pen_width>1</pen_width>
+                                <render_antialias>false</render_antialias>
+                                <steps_invert>false</steps_invert>
+                                <sticks_baseline>0</sticks_baseline>
+                                <sticks_orientation>2</sticks_orientation>
+                                <type>0</type>
+                            </style>
+                            <subscriber_queue_size>100</subscriber_queue_size>
+                            <title>Right Motor Command</title>
+                        </curve_3>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Angular Rates</title>
+                    <title>Velocities</title>
                 </column_0>
             </row_0>
             <row_1>
@@ -204,20 +255,7 @@
                         <curve_0>
                             <axes>
                                 <x_axis>
-                                    <field>linear/x</field>
-                                    <field_type>1</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/cmd_vel_raw</topic>
-                                    <type>geometry_msgs/Twist</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>linear/x</field>
+                                    <field>stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -226,8 +264,21 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/cmd_vel_raw</topic>
-                                    <type>geometry_msgs/Twist</type>
+                                    <topic>/encoder_values_inc</topic>
+                                    <type>diff_driver_base_controller_msgs/EncoderMeasurementsIncremental</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>left_encoder_val</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/encoder_values_inc</topic>
+                                    <type>diff_driver_base_controller_msgs/EncoderMeasurementsIncremental</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -250,25 +301,12 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Commanded X</title>
+                            <title>Left Encoder Position</title>
                         </curve_0>
                         <curve_1>
                             <axes>
                                 <x_axis>
-                                    <field>twist/twist/linear/x</field>
-                                    <field_type>1</field_type>
-                                    <scale>
-                                        <absolute_maximum>1000</absolute_maximum>
-                                        <absolute_minimum>0</absolute_minimum>
-                                        <relative_maximum>0</relative_maximum>
-                                        <relative_minimum>-1000</relative_minimum>
-                                        <type>0</type>
-                                    </scale>
-                                    <topic>/odom</topic>
-                                    <type>nav_msgs/Odometry</type>
-                                </x_axis>
-                                <y_axis>
-                                    <field>twist/twist/linear/x</field>
+                                    <field>stamp</field>
                                     <field_type>0</field_type>
                                     <scale>
                                         <absolute_maximum>1000</absolute_maximum>
@@ -277,8 +315,21 @@
                                         <relative_minimum>-1000</relative_minimum>
                                         <type>0</type>
                                     </scale>
-                                    <topic>/odom</topic>
-                                    <type>nav_msgs/Odometry</type>
+                                    <topic>/encoder_values_inc</topic>
+                                    <type>diff_driver_base_controller_msgs/EncoderMeasurementsIncremental</type>
+                                </x_axis>
+                                <y_axis>
+                                    <field>right_encoder_val</field>
+                                    <field_type>0</field_type>
+                                    <scale>
+                                        <absolute_maximum>1000</absolute_maximum>
+                                        <absolute_minimum>0</absolute_minimum>
+                                        <relative_maximum>0</relative_maximum>
+                                        <relative_minimum>-1000</relative_minimum>
+                                        <type>0</type>
+                                    </scale>
+                                    <topic>/encoder_values_inc</topic>
+                                    <type>diff_driver_base_controller_msgs/EncoderMeasurementsIncremental</type>
                                 </y_axis>
                             </axes>
                             <color>
@@ -301,17 +352,17 @@
                                 <type>0</type>
                             </style>
                             <subscriber_queue_size>100</subscriber_queue_size>
-                            <title>Odom X</title>
+                            <title>Right Encoder Position</title>
                         </curve_1>
                     </curves>
                     <legend>
                         <visible>true</visible>
                     </legend>
                     <plot_rate>30</plot_rate>
-                    <title>Linear Velocity</title>
+                    <title>Positions</title>
                 </column_0>
             </row_1>
         </plots>
-        <track_points>false</track_points>
+        <track_points>true</track_points>
     </table>
 </rqt_multiplot>
